@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "singularName": "proposal",
+    "pluralName": "proposals",
+    "displayName": "Proposal"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "opportunityNumber": {
+      "type": "string"
+    },
+    "proposalName": {
+      "type": "string"
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "pstatus": {
+      "type": "enumeration",
+      "enum": [
+        "New",
+        "Draft",
+        "Approved",
+        "Rejected"
+      ]
+    },
+    "value": {
+      "type": "decimal"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "proposedBy": {
+      "type": "string"
+    },
+    "chooseEmployee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::employee.employee",
+      "inversedBy": "proposals"
+    }
+  }
+}
